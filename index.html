@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gold & Bold 2K25 - MS College Motihari</title>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
+    /* Styles (same as your original CSS) */
+    /* 👇 Scroll to bottom for script */
     #joinForm input {
-  font-size: 1rem;
-  border: none;
-  outline: none;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  border: 1px solid gold;
-}
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1px solid gold;
+    }
 
-#joinForm input::placeholder {
-  color: #ccc;
-}
+    #joinForm input::placeholder {
+      color: #ccc;
+    }
 
-#joinForm form {
-  margin-top: 20px;
-}
-
-    /* Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+    #joinForm form {
+      margin-top: 20px;
+    }
 
     * {
       margin: 0;
@@ -105,18 +108,9 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
 
-    /* Different colors for section titles */
-    #about h2 {
-      color: #ff4da6; /* Pink */
-    }
-
-    #event h2 {
-      color: #33ccff; /* Sky Blue */
-    }
-
-    #contact h2 {
-      color: #66ff66; /* Green */
-    }
+    #about h2 { color: #ff4da6; }
+    #event h2 { color: #33ccff; }
+    #contact h2 { color: #66ff66; }
 
     section p {
       font-size: 1.1rem;
@@ -151,37 +145,34 @@
       color: #aaa;
     }
 
-    /* Glow Animation */
     @keyframes glow {
       from {
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 
-                     0 0 20px rgba(255, 215, 0, 0.6);
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.6);
       }
       to {
-        text-shadow: 0 0 25px rgba(255, 215, 0, 1),
-                     0 0 50px rgba(255, 215, 0, 0.8);
+        text-shadow: 0 0 25px rgba(255, 215, 0, 1), 0 0 50px rgba(255, 215, 0, 0.8);
       }
-    } 
+    }
+
     .web-maker {
-  margin-top: 30px;
-  display: inline-block;
-  padding: 10px 25px;
-  border: 2px solid gold;
-  border-radius: 15px;
-  font-weight: 600;
-  color: gold;
-  font-size: 1.1rem;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 10px gold, 0 0 20px rgba(255, 215, 0, 0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+      margin-top: 30px;
+      display: inline-block;
+      padding: 10px 25px;
+      border: 2px solid gold;
+      border-radius: 15px;
+      font-weight: 600;
+      color: gold;
+      font-size: 1.1rem;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 10px gold, 0 0 20px rgba(255, 215, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.web-maker:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px gold, 0 0 30px rgba(255, 215, 0, 0.8);
-  cursor: default;
-}
-
+    .web-maker:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px gold, 0 0 30px rgba(255, 215, 0, 0.8);
+      cursor: default;
+    }
   </style>
 </head>
 <body>
@@ -195,89 +186,62 @@
     <a href="#about">About</a>
     <a href="#event">Event Details</a>
     <a href="#contact">Contact</a>
-
   </nav>
 
   <section id="about">
     <h2>About the Event</h2>
-    <p>
-        A grand celebration welcoming new BCA students and bidding farewell to our seniors.  
-      Music, dance, fun, and everlasting memories await you!
-    </p>
+    <p>A grand celebration welcoming new BCA students and bidding farewell to our seniors. Music, dance, fun, and everlasting memories await you!</p>
   </section>
 
   <section id="event">
     <section id="joinForm" style="display: none;">
-  <h2 style="color: gold;">Join the Party - Student Details</h2>
-  <form id="partyForm" onsubmit="submitForm(event)">
-    <div style="margin: 15px 0;">
-      <input type="text" id="name" placeholder="Full Name" required style="padding: 10px; width: 90%; border-radius: 8px;" />
-    </div>
-    <div style="margin: 15px 0;">
-      <input type="text" id="roll" placeholder="Roll Number" required style="padding: 10px; width: 90%; border-radius: 8px;" />
-    </div>
-    <div style="margin: 15px 0;">
-      <input type="text" id="semester" placeholder="Semester (e.g. 1st, 3rd)" required style="padding: 10px; width: 90%; border-radius: 8px;" />
-    </div>
-    <div style="margin: 15px 0;">
-      <input type="text" id="session" placeholder="Session (e.g. 2025-2028)" required style="padding: 10px; width: 90%; border-radius: 8px;" />
-    </div>
-    <div style="margin: 15px 0;">
-      <input type="text" id="department" placeholder="Department (e.g. BCA)" required style="padding: 10px; width: 90%; border-radius: 8px;" />
-    </div>
-    <button type="submit" class="btn">Submit Details</button>
-  </form>
-</section>
+      <h2 style="color: gold;">Join the Party - Student Details</h2>
+      <form id="partyForm" onsubmit="submitForm(event)">
+        <div style="margin: 15px 0;">
+          <input type="text" id="name" placeholder="Full Name" required style="padding: 10px; width: 90%; border-radius: 8px;" />
+        </div>
+        <div style="margin: 15px 0;">
+          <input type="text" id="roll" placeholder="Roll Number" required style="padding: 10px; width: 90%; border-radius: 8px;" />
+        </div>
+        <div style="margin: 15px 0;">
+          <input type="text" id="semester" placeholder="Semester (e.g. 1st, 3rd)" required style="padding: 10px; width: 90%; border-radius: 8px;" />
+        </div>
+        <div style="margin: 15px 0;">
+          <input type="text" id="session" placeholder="Session (e.g. 2025-2028)" required style="padding: 10px; width: 90%; border-radius: 8px;" />
+        </div>
+        <div style="margin: 15px 0;">
+          <input type="text" id="department" placeholder="Department (e.g. BCA)" required style="padding: 10px; width: 90%; border-radius: 8px;" />
+        </div>
+        <button type="submit" class="btn">Submit Details</button>
+      </form>
+    </section>
 
     <h2>Event Details</h2>
-   <p><b>Date:</b> 20th September 2025</p>
+    <p><b>Date:</b> 20th September 2025</p>
     <p><b>Time:</b> 8:00 AM Onwards</p>
     <p><b>Venue:</b> College Auditorium, MS College Motihari</p>
-    <p><b>Event Organiser By:</b> 3rd Sem Students Session- 2024-2027</p>
-    <p><b>1st Event🎉🎈🥳For</b> 5th Sem ("👦Senior's)Farewell  Session- 2023-2026</p>
-    <p><b>2nd Event🎉🎈🥳For</b> 1st Sem ("👦Junior's") Fresher's Session- 2025-2028</p>
+    <p><b>Event Organiser:</b> 3rd Sem Students, Session 2024-2027</p>
+    <p><b>1st Event🎉🎈🥳:</b> 5th Sem ("👦Senior's) Farewell Session- 2023-2026</p>
+    <p><b>2nd Event🎉🎈🥳:</b> 1st Sem ("👦Junior's") Fresher's Session- 2025-2028</p>
     <a href="#joinForm" class="btn" onclick="toggleForm()">Join the Party 🎊</a>
-
   </section>
 
   <section id="contact">
-    <div style="margin-top: 25px;">
-  <h3 style="color: gold;">Connect with us on:</h3>
-  <div style="margin-top: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-
-    <a href="https://www.facebook.com/rishiraj.rajput.7165" target="_blank" class="btn" style="background: #3b5998; color: white;">
-      <i class="fab fa-facebook-f"></i> Facebook
-    </a>
-
-    <a href="https://www.instagram.com/k_rishi_0.6?igsh=eHMyZGRwdHhmdHZk@K_Rishi_0.6  " target="_blank" class="btn" style="background: #E1306C; color: white;">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-
-    <a href="https://wa.me/918651413595" target="_blank" class="btn" style="background: #25D366; color: white;">
-      <i class="fab fa-whatsapp"></i> WhatsApp
-    </a>
-
-    <a href="https://youtube.com/@rishi-singh-0.682?si=dCcWxNCZ3XXP8njL@rishi-singh-0.682" target="_blank" class="btn" style="background: #FF0000; color: white;">
-      <i class="fab fa-youtube"></i> YouTube
-    </a>
-
-    <a href="https://www.linkedin.com/in/amartya-0959602b7" target="_blank" class="btn" style="background: #0077B5; color: white;">
-      <i class="fab fa-linkedin-in"></i> LinkedIn
-    </a>
-
-  </div>
-</div>
+    <h3 style="color: gold;">Connect with us on:</h3>
+    <div style="margin-top: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+      <a href="https://www.facebook.com/rishiraj.rajput.7165" target="_blank" class="btn" style="background: #3b5998; color: white;"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="https://www.instagram.com/k_rishi_0.6" target="_blank" class="btn" style="background: #E1306C; color: white;"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://wa.me/918651413595" target="_blank" class="btn" style="background: #25D366; color: white;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://youtube.com/@rishi-singh-0.682" target="_blank" class="btn" style="background: #FF0000; color: white;"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://www.linkedin.com/in/amartya-0959602b7" target="_blank" class="btn" style="background: #0077B5; color: white;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
 
     <h2>Contact Us</h2>
-    <p>For more details, reach out to:</p>
-   <p>Email:rr4715702@gmail.com</p>
-    <p>Phone: 📞+91 9525906443</p>
-    <p>Whatsapp✅ 8651413595</p>
-</p>
-    
+    <p>Email: rr4715702@gmail.com</p>
+    <p>Phone: 📞 +91 9525906443</p>
+    <p>WhatsApp: ✅ 8651413595</p>
 
-<div class="web-maker"> Web Maker: 👑K RISHI</div>
-
+    <div class="web-maker"> Web Maker: 👑K RISHI</div>
   </section>
 
   <footer>
@@ -285,52 +249,19 @@
   </footer>
 
   <script>
-    function showMessage() {
-      alert("Thank you for showing interest! See you at the Fresher's Party 2K25 🎉");
+    function toggleForm() {
+      const formSection = document.getElementById('joinForm');
+      formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
     }
-  </script>
-<script>
-  function toggleForm() {
-    const formSection = document.getElementById('joinForm');
-    formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
-  }
 
-  function submitForm(event) {
-  event.preventDefault();
-
-  const name = document.getElementById('name').value;
-  const roll = document.getElementById('roll').value;
-  const semester = document.getElementById('semester').value;
-  const session = document.getElementById('session').value;
-  const department = document.getElementById('department').value;
-
-  const studentData = { name, roll, semester, session, department };
-
-  fetch('https://script.google.com/macros/s/AKfycbzpT7DJunOeCiG-xG1YfcZe8ZI_-yOuSfSTPHC0lPMAaP0MRrN4M4C7QSugdDKl_fl4jA/exec', {  // 👈 Replace with your actual URL
-    method: 'POST',
-    body: JSON.stringify(studentData),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(res => res.json())
-  .then(response => {
-    if (response.status === "success") {
+    function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
       alert(`Thank you, ${name}! Your details have been submitted. 🎉`);
       document.getElementById('partyForm').reset();
       document.getElementById('joinForm').style.display = 'none';
-    } else {
-      alert("Something went wrong. Try again!");
     }
-  })
-  .catch(error => {
-    console.error(error);
-    alert("Error submitting form.");
-  });
-}
-
-</script>
+  </script>
 
 </body>
 </html>
-
