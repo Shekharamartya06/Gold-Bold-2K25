@@ -296,23 +296,39 @@
   }
 
   function submitForm(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const roll = document.getElementById('roll').value;
-    const semester = document.getElementById('semester').value;
-    const session = document.getElementById('session').value;
-    const department = document.getElementById('department').value;
+  const name = document.getElementById('name').value;
+  const roll = document.getElementById('roll').value;
+  const semester = document.getElementById('semester').value;
+  const session = document.getElementById('session').value;
+  const department = document.getElementById('department').value;
 
-    // You can replace this with actual form submission logic
-    console.log("Student Info:", { name, roll, semester, session, department });
+  const studentData = { name, roll, semester, session, department };
 
-    alert(`Thank you, ${name}! Your details have been submitted. 🎉`);
+  fetch('https://script.google.com/macros/s/AKfycbzpT7DJunOeCiG-xG1YfcZe8ZI_-yOuSfSTPHC0lPMAaP0MRrN4M4C7QSugdDKl_fl4jA/exec', {  // 👈 Replace with your actual URL
+    method: 'POST',
+    body: JSON.stringify(studentData),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.json())
+  .then(response => {
+    if (response.status === "success") {
+      alert(`Thank you, ${name}! Your details have been submitted. 🎉`);
+      document.getElementById('partyForm').reset();
+      document.getElementById('joinForm').style.display = 'none';
+    } else {
+      alert("Something went wrong. Try again!");
+    }
+  })
+  .catch(error => {
+    console.error(error);
+    alert("Error submitting form.");
+  });
+}
 
-    // Optionally reset form and hide it
-    document.getElementById('partyForm').reset();
-    document.getElementById('joinForm').style.display = 'none';
-  }
 </script>
 
 </body>
