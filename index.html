@@ -254,14 +254,46 @@
       formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
     }
 
-    function submitForm(event) {
-      event.preventDefault();
-      const name = document.getElementById('name').value;
-      alert(`Thank you, ${name}! Your details have been submitted. 🎉`);
-      document.getElementById('partyForm').reset();
-      document.getElementById('joinForm').style.display = 'none';
-    }
+function submitForm(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const roll = document.getElementById('roll').value.trim();
+  const semester = document.getElementById('semester').value.trim();
+  const session = document.getElementById('session').value.trim();
+  const department = document.getElementById('department').value.trim();
+
+  if (!name || !roll || !semester || !session || !department) {
+    alert("Please fill all the details!");
+    return;
+  }
+
+  const data = { name, roll, semester, session, department };
+
+  fetch('YOUR_GOOGLE_SCRIPT_WEBAPP_URL', { // ← Apna Google Apps Script URL daal do
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: { 'Content-Type': 'application/json' }
+  })
+    .then(response => response.json())
+    .then(res => {
+      // Agar Google Script successful hai toh 'result' me "success" milega
+      if (res.result === "success") {
+        alert(`Thank you, ${name}! Your details have been submitted.`);
+        document.getElementById('partyForm').reset();
+        document.getElementById('joinForm').style.display = 'none';
+      } else {
+        // Agar kuch error aaya toh simple alert dikhana
+        alert("Something went wrong while submitting your details. Please try again.");
+      }
+    })
+    .catch(() => {
+      alert("Error submitting form. Please check your internet connection or try again later.");
+    });
+}
+
   </script>
 
 </body>
 </html>
+
